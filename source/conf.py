@@ -71,5 +71,6 @@ html_theme_options = {
 #    "codetextcolor" : "#000000",
 #    "bodyfont" : "#000000",
 #    "headfont" : "#000000",
-}
+#}
+
 html_static_path = ['_static']
