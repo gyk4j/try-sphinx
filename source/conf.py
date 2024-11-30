@@ -38,7 +38,7 @@ html_theme_options = {
     'version_selector': True,
     'language_selector': True,
     # Toc options
-    'collapse_navigation': True,
+    'collapse_navigation': False,
     'sticky_navigation': True,
     'navigation_depth': 4,
     'includehidden': True,

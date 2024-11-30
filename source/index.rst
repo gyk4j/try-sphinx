@@ -22,8 +22,7 @@ Facts database <https://world.openfoodfacts.org/>`_ and offers a *simple* and
    README.md
    SUMMARY.md
    my-first-chapter.md
-      nested/README.md
-      nested/sub-chapter.md
+   nested.rst
 
 Indices and tables
 ==================
