@@ -4,13 +4,26 @@
    contain the root `toctree` directive.
 
 Welcome to Try Sphinx's documentation!
-======================================
+===================================
+
+**Try Sphinx** (/try'sphinx/) is a Python library for cooks and food lovers that
+creates recipes mixing random ingredients.  It pulls data from the `Open Food
+Facts database <https://world.openfoodfacts.org/>`_ and offers a *simple* and
+*intuitive* API.
+
+.. note::
+
+   This project is under active development.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   README.md
+   SUMMARY.md
+   my-first-chapter.md
+   nested/README.md
+   nested/sub-chapter.md
 
 Indices and tables
 ==================
