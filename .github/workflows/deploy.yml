@@ -15,7 +15,7 @@ jobs:
       SOURCE_DIR: 'source'
       BUILD_DIR: 'build'
       FORMAT_HTML: 'html'
-      FORMAT_PDF: 'pdf'
+      FORMAT_PDF: 'latexpdf'
     steps:
       - uses: actions/checkout@v4
         with:
