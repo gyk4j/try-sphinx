@@ -19,18 +19,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      
-      - name: Cache apt packages
-        id: cache-apt-packages
-        uses: actions/cache@v4
-        with:
-          path: /var/cache/apt/archives/*.deb
-          key: ${{ runner.os }}-texlive        
-        
+          fetch-depth: 0        
       - name: Install LaTeX
         run: |
-          sudo apt install -y \
+          sudo apt-get update && sudo apt-get install -y \
             texlive-latex-recommended \
             texlive-fonts-recommended \
             texlive-fonts-extra \
@@ -42,18 +34,14 @@ jobs:
         run: |
           # Install Sphinx and myst-parser
           pip install -r requirements.txt
+      - name: Build PDF
+        run: |
+          sphinx-build -M $FORMAT_PDF $SOURCE_DIR $BUILD_DIR LATEXOPTS="--halt-on-error"
       - name: Build HTML
         run: |
           # Assuming BUILDDIR is "build", and format is "html",
           # Output will be in ./<build>/<format>/ directory
           sphinx-build -M $FORMAT_HTML $SOURCE_DIR $BUILD_DIR
-      - name: Build PDF
-        run: |
-          sphinx-build -M $FORMAT_PDF $SOURCE_DIR $BUILD_DIR LATEXOPTS="--halt-on-error"
-      - name: Copy PDF
-        run: |
-          mkdir build/$FORMAT_HTML/_downloads/
-          cp build/latex/trysphinx.pdf build/$FORMAT_HTML/_downloads/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
