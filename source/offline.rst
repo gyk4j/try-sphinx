@@ -1,4 +1,4 @@
-Offline documentations
+Offline Documentations
 ======================
 
 * :download:`PDF </_downloads/trysphinx.pdf>`

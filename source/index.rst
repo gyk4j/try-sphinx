@@ -19,6 +19,7 @@ Facts database <https://world.openfoodfacts.org/>`_ and offers a *simple* and
    :maxdepth: 2
    :caption: Contents:
 
+   offline.rst
    README.md
    SUMMARY.md
    my-first-chapter.md
