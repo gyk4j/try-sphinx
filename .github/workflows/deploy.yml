@@ -20,6 +20,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      
+      - name: Cache apt packages
+        id: cache-apt-packages
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ runner.os }}-texlive        
+        
       - name: Install LaTeX
         run: |
           sudo apt install -y \
