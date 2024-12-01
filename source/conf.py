@@ -74,7 +74,11 @@ html_theme_options = {
 #    "headfont" : "#000000",
 #}
 
-html_static_path = ['_static']
+html_static_path = [
+    '_static',
+    '_images',
+    '_downloads',
+]
 
 latex_engine = 'pdflatex'
 latex_elements = {

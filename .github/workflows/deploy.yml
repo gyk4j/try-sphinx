@@ -25,7 +25,7 @@ jobs:
         id: cache-apt-packages
         uses: actions/cache@v4
         with:
-          path: /var/cache/apt/archives
+          path: /var/cache/apt/archives/**/*.deb
           key: ${{ runner.os }}-texlive        
         
       - name: Install LaTeX
@@ -50,9 +50,10 @@ jobs:
       - name: Build PDF
         run: |
           sphinx-build -M $FORMAT_PDF $SOURCE_DIR $BUILD_DIR LATEXOPTS="--halt-on-error"
-      - name: Find PDF
+      - name: Copy PDF
         run: |
-          find . -name trysphinx.pdf
+          mkdir build/$FORMAT_HTML/_downloads/
+          cp build/$FORMAT_PDF/trysphinx.pdf build/$FORMAT_HTML/_downloads/
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
