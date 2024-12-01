@@ -1,7 +1,7 @@
 Offline Documentations
 ======================
 
-* :download:`PDF </_downloads/trysphinx.pdf>`
+* :download:`PDF <./_downloads/trysphinx.pdf>`
 
 .. toctree::
    :maxdepth: 2

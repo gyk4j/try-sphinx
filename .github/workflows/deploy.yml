@@ -25,7 +25,7 @@ jobs:
         id: cache-apt-packages
         uses: actions/cache@v4
         with:
-          path: /var/cache/apt/archives/**/*.deb
+          path: /var/cache/apt/archives/*.deb
           key: ${{ runner.os }}-texlive        
         
       - name: Install LaTeX
