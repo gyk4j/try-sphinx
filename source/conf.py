@@ -75,3 +75,10 @@ html_theme_options = {
 #}
 
 html_static_path = ['_static']
+
+latex_engine = 'pdflatex'
+latex_elements = {
+    "papersize": "a4paper".
+    "iconpackage": "fontawesome5",
+}
+latex_show_urls = 'footnote'

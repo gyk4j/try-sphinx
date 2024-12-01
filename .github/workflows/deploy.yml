@@ -14,27 +14,41 @@ jobs:
     env:
       SOURCE_DIR: 'source'
       BUILD_DIR: 'build'
-      OUTPUT_FORMAT: 'html'
+      FORMAT_HTML: 'html'
+      FORMAT_PDF: 'pdf'
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Install LaTeX
+        run: |
+          sudo apt install -y \
+            texlive-latex-recommended \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            tex-gyre \
+            texlive-latex-extra \
+            latexmk \
+            fonts-font-awesome
       - name: Install latest Sphinx and myST Parser
         run: |
           # Install Sphinx and myst-parser
           pip install -r requirements.txt
-      - name: Build Book
+      - name: Build HTML
         run: |
           # Assuming BUILDDIR is "build", and format is "html",
           # Output will be in ./<build>/<format>/ directory
-          sphinx-build -M $OUTPUT_FORMAT $SOURCE_DIR $BUILD_DIR
+          sphinx-build -M $FORMAT_HTML $SOURCE_DIR $BUILD_DIR
+      - name: Build PDF
+        run: |
+          sphinx-build -M $FORMAT_PDF $SOURCE_DIR $BUILD_DIR LATEXOPTS="--halt-on-error"
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: "${{ env.BUILD_DIR }}/${{ env.OUTPUT_FORMAT }}"
+          path: "${{ env.BUILD_DIR }}/${{ env.FORMAT_HTML }}"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
