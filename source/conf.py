@@ -34,7 +34,7 @@ html_theme_options = {
     'style_external_links': False,
     'vcs_pageview_mode': 'blob',
     'style_nav_header_background': '#2980B9',
-    'flyout_display': 'hidden',
+    'flyout_display': 'attached',
     'version_selector': True,
     'language_selector': True,
     # Toc options
