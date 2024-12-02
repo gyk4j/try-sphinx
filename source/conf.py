@@ -30,9 +30,10 @@ html_theme = "sphinx_rtd_theme"
 html_theme_options = {
 #    'analytics_id': 'G-XXXXXXXXXX',  #  Provided by Google in your dashboard
 #    'analytics_anonymize_ip': False,
+    'display_version': True,
     'logo_only': False,
     'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
+    'style_external_links': True,
     'vcs_pageview_mode': 'blob',
     'style_nav_header_background': '#2980B9',
     'flyout_display': 'attached',
@@ -80,6 +81,9 @@ html_static_path = [
     '_images',
     '_downloads',
 ]
+
+html_logo = "_static/logo.svg"
+html_favicon = "_static/favicon.svg"
 
 latex_engine = 'pdflatex'
 latex_elements = {
