@@ -7,5 +7,5 @@ some text
    :maxdepth: 2
    :caption: Contents:
    
-   nested/README.md
-   nested/sub-chapter.md
+   README.md
+   sub-chapter.md

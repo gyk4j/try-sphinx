@@ -17,13 +17,25 @@ Facts database <https://world.openfoodfacts.org/>`_ and offers a *simple* and
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-
+   :caption: Offline Documentations
+   
    offline.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
    README.md
    SUMMARY.md
    my-first-chapter.md
-   nested.rst
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Nested
+   
+   nested/index.rst
+   nested/README.md
+   nested/sub-chapter.md
 
 Indices and tables
 ==================
