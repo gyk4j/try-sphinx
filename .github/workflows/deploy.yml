@@ -16,6 +16,7 @@ jobs:
       BUILD_DIR: 'build'
       FORMAT_HTML: 'html'
       FORMAT_PDF: 'latexpdf'
+      FORMAT_EPUB: 'epub'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,6 +38,9 @@ jobs:
       - name: Build PDF
         run: |
           sphinx-build -M $FORMAT_PDF $SOURCE_DIR $BUILD_DIR LATEXOPTS="--halt-on-error"
+      - name: Build EPUB
+        run: |
+          sphinx-build -M $FORMAT_EPUB $SOURCE_DIR $BUILD_DIR
       - name: Build HTML
         run: |
           # Assuming BUILDDIR is "build", and format is "html",
