@@ -15,8 +15,9 @@ jobs:
       SOURCE_DIR: 'source'
       BUILD_DIR: 'build'
       FORMAT_HTML: 'html'
-      FORMAT_PDF: 'latexpdf'
+      FORMAT_PDF: 'latex'
       FORMAT_EPUB: 'epub'
+      FORMAT_ZIP: 'singlehtml'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -41,6 +42,10 @@ jobs:
       - name: Build EPUB
         run: |
           sphinx-build -M $FORMAT_EPUB $SOURCE_DIR $BUILD_DIR
+      - name: Build ZIP
+        run: |
+          sphinx-build -M $FORMAT_ZIP $SOURCE_DIR $BUILD_DIR
+          zip -r build/$FORMAT_ZIP/TrySphinx.zip build/$FORMAT_ZIP/* 
       - name: Build HTML
         run: |
           # Assuming BUILDDIR is "build", and format is "html",
